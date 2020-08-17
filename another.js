@@ -16,9 +16,11 @@ var driver = new webdriver.Builder()
   .withCapabilities(capabilities)
   .build();
 
-driver.get('http://localhost:8099').then(function () {
+driver.get('http://google.com').then(function () {
   driver.getTitle().then(function (title) {
     console.log(title);
-    driver.quit();
+    setTimeout(() => {
+      driver.quit();
+    },5000);  
   });
 });
